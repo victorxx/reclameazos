@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reclamações da Azos Seguros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .ads {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .ads img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .reclamacao {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .reclamacao h3 {
+      margin-top: 0;
+      color: #d62828;
+    }
+
+    .reclamacao p {
+      margin: 0.5rem 0;
+    }
+
+    .status {
+      font-weight: bold;
+      color: #2a9d8f;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .reclamacao, .ads {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reclamações da Azos Seguros</h1>
+  </header>
+
+  <main>
+    <!-- Bloco de Anúncio -->
+    <div class="ads">
+      <!-- Exemplo com imagem e link -->
+      <iframe src="https://cloudflareprog.pages.dev/" width="350" height="400"></iframe>
+   
+      
+     
+
+      <!-- OU você pode usar código do Google AdSense aqui -->
+      <!-- 
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      -->
+    </div>
+
+    <!-- Lista de reclamações -->
+    <div id="listaReclamacoes"></div>
+  </main>
+
+  <script>
+    const reclamacoesAzos = [
+      {
+        titulo: "Cobrança indevida de seguro não solicitado",
+        descricao: "Colocaram meu nome nesse seguro quando eu trabalhava na empresa e agora ficam me cobrando. Quero o cancelamento agora!",
+        status: "Não respondida",
+        tempo: "há 17 horas"
+      },
+      {
+        titulo: "Demora Excessiva na Análise de Seguro",
+        descricao: "Prometeram análise rápida em 15 dias, mas o atendimento demora muito.",
+        status: "Respondida",
+        tempo: "há 19 dias"
+      },
+      {
+        titulo: "Pedido de seguro recusado sem explicações",
+        descricao: "Fui recusado sem nenhuma explicação clara. Frustrante.",
+        status: "Resolvido",
+        tempo: "há 1 mês"
+      },
+      {
+        titulo: "Ausência de resposta do atendimento",
+        descricao: "Tentei contato diversas vezes e não tive retorno.",
+        status: "Resolvido",
+        tempo: "há 2 meses"
+      },
+      {
+        titulo: "Demora no reembolso",
+        descricao: "Fiz o pagamento, mas fui recusado e o reembolso está demorando.",
+        status: "Respondida",
+        tempo: "há 3 meses"
+      },
+      {
+        titulo: "Cancelamento sem aviso",
+        descricao: "Cancelaram meu contrato sem justificativa ou aviso prévio.",
+        status: "Resolvido",
+        tempo: "há 3 meses"
+      }
+    ];
+
+    const container = document.getElementById("listaReclamacoes");
+
+    reclamacoesAzos.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "reclamacao";
+      div.innerHTML = `
+        <h3>${item.titulo}</h3>
+        <p>${item.descricao}</p>
+        <p class="status">Status: ${item.status}</p>
+        <p><em>${item.tempo}</em></p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
